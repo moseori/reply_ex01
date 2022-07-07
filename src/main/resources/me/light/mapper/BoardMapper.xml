@@ -11,7 +11,7 @@
   <resultMap type="me.light.model.Board" id="boardResult">
   <result property="bno" column="bno" />
   <result property="title" column="title" />
-  <result property="contents" column="contents" />
+  <result property="content" column="content" />
   <result property="writer" column="writer" />
   <result property="regDate" column="regDate" />
   <result property="updateDate" column="updateDate"/>

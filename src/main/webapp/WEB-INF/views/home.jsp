@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="${pageContext.request.contextPath}/board/list">
-	게시판 바로가기
-</a>
+<%@ include file="layout/header.jspf" %>
+<a href="${contextPath}/board/list"> 게시판 바로가기 </a>
+<%@ include file="layout/footer.jspf" %>
 </body>
 </html>
