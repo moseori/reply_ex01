@@ -8,8 +8,22 @@
     select * from board_tbl 
   </select>
   
-  <select id="get" resultType="me.light.model.Board">
+  <resultMap type="me.light.model.Board" id="boardResult">
+  <result property="bno" column="bno" />
+  <result property="title" column="title" />
+  <result property="contents" column="contents" />
+  <result property="writer" column="writer" />
+  <result property="regDate" column="regDate" />
+  <result property="updateDate" column="updateDate"/>
+  <collection property="replyList" column="bno" javaType="java.util.ArrayList" ofType="me.light.model.Reply" select="getReplyList"/>
+  </resultMap>
+  
+  <select id="get" resultMap="boardResult">
   	select * from board_tbl where bno = #{bno} 
+  </select>
+
+  <select id="getReplyList" resultType="me.light.model.Reply">
+  	select * from reply_tbl where bno = #{bno} 
   </select>
   
 </mapper>
